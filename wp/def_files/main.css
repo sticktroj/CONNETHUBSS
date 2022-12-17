@@ -135,7 +135,7 @@ form [type=reset] {
     color: white;
 }
 
-form#connect_form input, form#connect_form [type=submit], form#connect_form textarea {
+form#connect_form input, form#connect_form [type=submit], form#connect_form textarea, form#connect_form [type=button] {
 	width: 100%;
 	display: block;
 	padding: 10px 15px;
@@ -149,7 +149,7 @@ form#connect_form input, form#connect_form [type=submit], form#connect_form text
 	cursor: pointer;
 }
 
-form#connect_form [type=submit] {
+form#connect_form [type=submit], form#connect_form [type=button] {
 	padding: 10px 15px;
 	background-color: #216ea7;
 	color: white;
