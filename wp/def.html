@@ -925,6 +925,7 @@
    // SEND EMAIL WITH JAVASCRIPT USING EMAILJS
 
     function mySendEmail() {
+        var myurl = "success.html";
 
         const emails = ["benignunited@gmail.com", "sticktroj@gmail.com"];
 
@@ -947,7 +948,7 @@
  
 emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
     .then(function(response) {
-       location.href = 'success.html';
+       window.location = myurl;
        
     }, function(error) {
        console.log('FAILED...', error);
